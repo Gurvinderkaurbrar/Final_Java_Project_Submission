@@ -69,14 +69,19 @@ public class JavaBeansServlet extends HttpServlet {
           response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
         response.setHeader("Pragma", "no-cache");
         response.setDateHeader("Expires", 0);
-         
-        PrintWriter out = response.getWriter();
+         try{
+             PrintWriter out = response.getWriter();
        // String fname = request.getParameter("first");
         //String lname = request.getParameter("last");
         LookupController look = new LookupController();
-          out.println(look.getAll().toString());
+          out.println(look.getAll());
          
          out.println("Welcome in GET");
+             
+         }catch(IOException ex){
+             Logger.getLogger(JavaBeansServlet.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
     }
 
     /**
