@@ -75,7 +75,7 @@
            
             ResultSetMetaData rsm = rs.getMetaData();
            while (rs.next()) {
-        //   out.println(rs.getString("uname")); 
+        //  out.println(rs.getString("uname")); 
           // out.println(rs.getString("pass")); 
            //s=rs.getString("uname");
                 

@@ -15,6 +15,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,6 +25,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ruturaj
  */
+@WebServlet("/lookup")
 public class JavaBeansServlet extends HttpServlet {
 
     /**
@@ -64,9 +66,16 @@ public class JavaBeansServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         PrintWriter out = response.getWriter();
+          response.setHeader("Cache-Control", "private, no-store, no-cache, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setDateHeader("Expires", 0);
+         
+        PrintWriter out = response.getWriter();
        // String fname = request.getParameter("first");
         //String lname = request.getParameter("last");
+        LookupController look = new LookupController();
+          out.println(look.getAll().toString());
+         
          out.println("Welcome in GET");
     }
 

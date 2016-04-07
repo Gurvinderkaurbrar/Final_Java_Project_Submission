@@ -14,17 +14,17 @@ public class Lookup {
     private int infoId;
     private String bizName;
     private String address;
-    private String firtsName;
+    private String firtName;
     private String lastName;
     private String email;
     private String contactNo;
     private String image;
 
-    public Lookup(int infoId, String bizName, String address, String firtsName, String lastName, String email, String contactNo, String image) {
+    public Lookup(int infoId, String bizName, String address, String firtName, String lastName, String email, String contactNo, String image) {
         this.infoId = infoId;
         this.bizName = bizName;
         this.address = address;
-        this.firtsName = firtsName;
+        this.firtName = firtName;
         this.lastName = lastName;
         this.email = email;
         this.contactNo = contactNo;
@@ -60,12 +60,12 @@ public class Lookup {
         this.address = address;
     }
 
-    public String getFirtsName() {
-        return firtsName;
+    public String getFirtName() {
+        return firtName;
     }
 
-    public void setFirtsName(String firtsName) {
-        this.firtsName = firtsName;
+    public void setFirtName(String firtsName) {
+        this.firtName = firtsName;
     }
 
     public String getLastName() {
@@ -85,20 +85,36 @@ public class Lookup {
     }
 
     public String getContactNo() {
+        
         return contactNo;
     }
 
     public void setContactNo(String contactNo) {
         this.contactNo = contactNo;
+        System.out.println("QQQQQQQQQQQQQQQQQQQQQQ"+contactNo);
     }
 
     public String getImage() {
+        
         return image;
+        
     }
 
     public void setImage(String image) {
         this.image = image;
+        
     }
     
+    @Override
+    public String toString() {
+        return "{ \"info_id\" : " + infoId + ", "
+                + "\"biz_name\" : \"" + bizName +"\", "
+                + "\"address\" : \"" + address +"\", "
+                + "\"first_name\" : \"" +firtName + "\", "
+                + "\"last_name\" : \"" +lastName + "\", "
+                + "\"email\" : \"" +email + "\", "
+                + "\"contact_no\" : \"" +contactNo + "\", "
+                + "\"image\" : \""+ image +"\"}";
+    }
     
 }
