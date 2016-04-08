@@ -43,14 +43,15 @@ limitations under the License.
                     dataType: "json",
                     success: function (data) {
                         var html = '<tr><th>ID</th><th>Biz Name</th><th>Address</th><th>First_name</th><th>Last_name</th><th>Email</th><th>Contact</th><th>Image</th></tr>';
-                        for (var i = 0; i < data.length; i++) {
-                            html += '<tr><td>' + data[i].infoId + '</td>';
-                            html += '<td>' + data[i].bizName + '</td>';
+                        for (var i = 0; i < 100; i++) {
+                           
+                            html += '<tr><td>' + data[i].info_id+ '</td>';
+                            html += '<td>' + data[i].biz_name + '</td>';
                             html += '<td>' + data[i].address + '</td>';
-                            html += '<td>' + data[i].firtName + '</td>';
-                            html += '<td>' + data[i].lastName + '</td>';
+                            html += '<td>' + data[i].firt_name + '</td>';
+                            html += '<td>' + data[i].last_name + '</td>';
                             html += '<td>' + data[i].email + '</td>';
-                            html += '<td>' + data[i].contactNo + '</td>';
+                            html += '<td>' + data[i].contact_no + '</td>';
                             html += '<td>' + data[i].image + '</td></tr>';
                         }
                         $('#output').html(html);
@@ -62,11 +63,10 @@ limitations under the License.
     </head>
     <body>
         <% LookupController l = new LookupController();
+                
            Lookup lp = new Lookup();
-           out.println(lp.getContactNo());
-           
-            
-            %>
+           out.println("jjjjjjjjjjjjjjjjjjjjjjjjjjjj"+lp.getContactNo());
+           %>
         <div class="container">            
             <div><button class="btn btn-primary" onclick="getAll()">Refresh</button></div>
              <table class="table" id="output"></table>
