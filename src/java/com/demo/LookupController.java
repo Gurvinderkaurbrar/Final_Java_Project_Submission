@@ -19,6 +19,9 @@ import java.util.List;
 public class LookupController {
     
     private List<Lookup> list = new ArrayList();
+    
+    
+    
 
     public LookupController() {
         
